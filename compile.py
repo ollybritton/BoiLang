@@ -11,6 +11,16 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+def indices(lst, element):
+    result = []
+    offset = -1
+    while True:
+        try:
+            offset = lst.index(element, offset+1)
+        except ValueError:
+            return result
+        result.append(offset)
+
 def generateArray(code):
     array = []
     for i in range(0,20):
@@ -28,9 +38,17 @@ def point(pos, data):
 def run(code, delay):
     data = generateArray(code)
     chars = code.split(" ")
+
     charsLength = len(chars)
+
+    startLoops = indices(chars, "bois")
+    endLoops = indices(chars, "boie")
+    loopRanges = [y - x for x, y in zip(startLoops, endLoops)]
+    # FIXME: Loops take the next loop as the end. Doesn't work when there are loops within loops.
+
     pointer = 0
     iterator = 0
+
     text = ""
 
     if(chars[0] == "yeah"):
@@ -90,6 +108,7 @@ def run(code, delay):
 
 #            print bcolors.OKBLUE + "Generation: "+ bcolors.ENDC + bcolors.OKGREEN + str(iterator) + bcolors.ENDC + bcolors.OKBLUE", List: " + bcolors.ENDC + bcolors.OKGREEN + str(data) + bcolors.ENDC + bcolors.OKBLUE + ", Pointer On: " + bcolors.ENDC + bcolors.OKGREEN + str(pointer) + bcolors.ENDC
             print data
+            print startLoops, endLoops, loopRanges
             currentPoint = point(pointer, data)
             bcolors.OKGREEN + str(currentPoint) + bcolors.ENDC + "\n"
             time.sleep(delay)
@@ -98,6 +117,6 @@ def run(code, delay):
         print bcolors.OKBLUE + "Text Printed: " + bcolors.ENDC + bcolors.OKGREEN + text + bcolors.ENDC
         print bcolors.OKBLUE + "Final List:" + bcolors.ENDC + bcolors.OKGREEN + str(data) + bcolors.ENDC
 
-code = "yeah boii boii boii boii boii boii boii boii boii boii bois booii boii boii boii boii boii boii boii booii boii boii boii boii boii boii boii boii boii boii booii boii boii boii booii boii bbooi bbooi bbooi bbooi bboi boie booii boii boii boi! booii boii boi! boii boii boii boii boii boii boii boi! boi! boii boii boii boi! booii boii boii boi! bbooi bbooi boii boii boii boii boii boii boii boii boii boii boii boii boii boii boii boi! booii boi! boii boii boii boi! bboi bboi bboi bboi bboi bboi boi! bboi bboi bboi bboi bboi bboi bboi bboi boi! booii boii boi! booii boi!"
+code = "yeah boii boii boii boii boii boii boii boii boii boii bois bboi booii boii boii boii boii boii boii boii boii boii boii bbooi boie booii boii boii boii boii boi! bboi bboi bboi boi! boii boii boii boii boii boii boii boi! boi! boii boii boii boi! bbooi boii boii boii boii boii boii boii boii bois bboi booii bboi bboi bboi bboi bboi bboi bboi bboi bbooi boie booii bboi bboi bboi bboi bboi bboi bboi bboi bboi bboi bboi bboi bboi bboi bboi boi! bbooi boii boii boii boii boii boii boii boii boii bois bboi booii boii boii boii boii boii boii boii boii boii bbooi boie booii boii boii boii boii boii boii boi! bboi bboi bboi bboi bboi bboi bboi bboi boi! boii boii boii boi! bboi bboi bboi bboi bboi bboi boi! bboi bboi bboi bboi bboi bboi bboi bboi boi! bbooi"
 
 print run(code, 0.01)
