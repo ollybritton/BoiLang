@@ -24,4 +24,8 @@ BoiLang is a variation on the language `BF` which turns all the normal character
 ## Examples:
 
 - Hello World!:
-  `yeah boii boii boii boii boii boii boii boii boii boii bois booii boii boii boii boii boii boii boii booii boii boii boii boii boii boii boii boii boii boii booii boii boii boii booii boii bbooi bbooi bbooi bbooi bboi boie booii boii boii boi! booii boii boi! boii boii boii boii boii boii boii boi! boi! boii boii boii boi! booii boii boii boi! bbooi bbooi boii boii boii boii boii boii boii boii boii boii boii boii boii boii boii boi! booii boi! boii boii boii boi! bboi bboi bboi bboi bboi bboi boi! bboi bboi bboi bboi bboi bboi bboi bboi boi! booii boii boi! booii boi!"`:
+  `yeah boii boii boii boii boii boii boii boii boii boii bois booii boii boii boii boii boii boii boii booii boii boii boii boii boii boii boii boii boii boii booii boii boii boii booii boii bbooi bbooi bbooi bbooi bboi boie booii boii boii boi! booii boii boi! boii boii boii boii boii boii boii boi! boi! boii boii boii boi! booii boii boii boi! bbooi bbooi boii boii boii boii boii boii boii boii boii boii boii boii boii boii boii boi! booii boi! boii boii boii boi! bboi bboi bboi bboi bboi bboi boi! bboi bboi bboi bboi bboi bboi bboi bboi boi! booii boii boi! booii boi!"`
+
+## How To Use It:
+
+To run, update the `code` variable inside `compile.py`, and type `python compile.py` (with `compile.py` inside directory).
