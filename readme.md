@@ -41,4 +41,4 @@ BoiLang is a variation on the language `BF` which turns all the normal character
 
 ## How To Use It:
 
-To run, update the `code` variable inside `compile.py`, and type `python compile.py` (with `compile.py` inside directory).
+`BoiLang` has a really bad CLI. To run, place all these files inside your working directory and then run `python compile.py <file> <inspect>`. If you put `-i` for the inspect, it will break down the steps it is taking.
